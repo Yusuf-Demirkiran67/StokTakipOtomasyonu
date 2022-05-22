@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.DependencyResolvers.Ninject;
+using Entities.Concrete;
 using MessagingToolkit.QRCode.Codec;
 using System;
 using System.Windows.Forms;
@@ -73,13 +74,16 @@ namespace WebFormsUI
         {
             try
             {
-                dgwProducts.DataSource =
-              _productService.GetProductsByCategory(Convert.ToInt32(cbxCategory.SelectedValue));
+               
+                    dgwProducts.DataSource =
+            _productService.GetProductsByCategory(Convert.ToInt32(cbxCategory.SelectedValue));
+                
+              
             }
             catch
             {
 
-                Console.WriteLine("Categori Hatası");
+               
             }
 
         }
@@ -124,6 +128,21 @@ namespace WebFormsUI
         private void Anasayfa_Activated(object sender, EventArgs e)
         {
             LoadProducts();
+        }
+
+        private void CategoryAdd_Click(object sender, EventArgs e)
+        {
+            CategoryFrm categoryFrm = new CategoryFrm();
+            categoryFrm.Show();
+            this.Hide();
+        }
+
+        private void cbxCategory_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (cbxCategory.Items.Count==0)
+            {
+                MessageBox.Show("Lütfen '+' butonuna tıklayarak kategori ekleyin !!!");
+            }
         }
     }
 }

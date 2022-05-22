@@ -39,6 +39,7 @@ namespace WebFormsUI
             this.CikisBtn = new System.Windows.Forms.Button();
             this.SilBtn = new System.Windows.Forms.Button();
             this.GuncelleBtn = new System.Windows.Forms.Button();
+            this.CategoryAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@ namespace WebFormsUI
             this.cbxCategory.Size = new System.Drawing.Size(449, 21);
             this.cbxCategory.TabIndex = 1;
             this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
+            this.cbxCategory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbxCategory_MouseClick);
             // 
             // txtProductName
             // 
@@ -153,12 +155,26 @@ namespace WebFormsUI
             this.GuncelleBtn.UseVisualStyleBackColor = false;
             this.GuncelleBtn.Click += new System.EventHandler(this.GuncelleBtn_Click);
             // 
+            // CategoryAdd
+            // 
+            this.CategoryAdd.BackColor = System.Drawing.Color.DarkGreen;
+            this.CategoryAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.CategoryAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.CategoryAdd.Location = new System.Drawing.Point(507, 39);
+            this.CategoryAdd.Name = "CategoryAdd";
+            this.CategoryAdd.Size = new System.Drawing.Size(29, 33);
+            this.CategoryAdd.TabIndex = 10;
+            this.CategoryAdd.Text = "+";
+            this.CategoryAdd.UseVisualStyleBackColor = false;
+            this.CategoryAdd.Click += new System.EventHandler(this.CategoryAdd_Click);
+            // 
             // Anasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1257, 513);
+            this.Controls.Add(this.CategoryAdd);
             this.Controls.Add(this.GuncelleBtn);
             this.Controls.Add(this.SilBtn);
             this.Controls.Add(this.CikisBtn);
@@ -190,5 +206,6 @@ namespace WebFormsUI
         private System.Windows.Forms.Button GuncelleBtn;
         public System.Windows.Forms.ComboBox cbxCategory;
         public System.Windows.Forms.DataGridView dgwProducts;
+        private System.Windows.Forms.Button CategoryAdd;
     }
 }
