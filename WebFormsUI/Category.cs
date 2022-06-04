@@ -28,9 +28,10 @@ namespace WebFormsUI
             {
                _categoryService.Add(new Category { 
                 CategoryName=CategoryNameTxt.Text
+                
             
             });
-            MessageBox.Show("Kategori eklendi");
+                MessageBox.Show("Kategori eklendi");
             }
             catch (Exception exception)
             {
